@@ -16,5 +16,7 @@ d = int(c)
 d = d + 52
 print(d)
 
-e = int("g")        # Expected Error "invalid literal for int() with base 10: 'g'"
-print(e)
+# e = int("g")        # Expected Error "invalid literal for int() with base 10: 'g'"
+# print(e)
+
+# int('29', 2)
