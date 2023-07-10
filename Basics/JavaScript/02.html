@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // Cookies
+        // Expires, Domian, Path, Secure, Name = Value
+
+        // function WriteCookie(){
+        //     if(document.myform.customer.value == ""){
+        //         alert("Enter Some Value!")
+        //         return
+        //     }
+        //     cookievalue = escape(document.myform.customer.value)+";";
+        //     document.cookie = "name=" + cookievalue;
+        //     document.write("Settings Cookies : " + "name=" + cookievalue + "<br>")
+        // }
+
+        // Reading Cookies
+
+        
+        // Settings Cookies Expire Date
+        function WriteCookie(){
+            var now = new Date();
+            now.setDate( now.getDate() + 3 )
+            cookievalue = escape(document.myform.customer.value) + ";"
+
+            document.cookie = "name = " + cookievalue;
+            document.cookie = "expires = " + now.toUTCString() + ';'
+            document.write("Setting Cookies : " + "name = " + cookievalue)
+
+        }
+
+        function ReadCookie(){
+            var allcookies = document.cookie
+            document.write("All cookies : " + allcookies + "<br>")
+
+            // Get all cookies in array
+            cookieArray = allcookies.split(",")
+
+            for(var i = 0; i < cookieArray.length; i++){
+                name = cookieArray[i].split('=')[0];
+                value = cookieArray[i].split('=')[1];
+                document.write("Key is: " + name + " and Value is : " + value)
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <form name="myform" action="">
+        Enter name : <input type="text" name="customer"/>
+        <input type="button" value="Set Cookies" onclick="WriteCookie()">
+        
+        <p>click the below button to and see the results</p>
+        <input type="button" value="Get Cookie" onclick="ReadCookie()">
+    </form>
+    
+</body>
+</html>

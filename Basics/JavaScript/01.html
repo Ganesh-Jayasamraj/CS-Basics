@@ -111,6 +111,22 @@
         for(aProperty in navigator){
             document.write(aProperty+br)
         }
+
+        // Function
+        function fun(parameter){
+            alert(parameter)
+        }
+
+        // Event
+        // onmouseover and onmouseout
+        function over(){
+            document.write("Mouse Over")
+        }
+
+        function out(){
+            document.write("Mouse Out")
+        }
+
     </script>
 
 </head>
@@ -118,6 +134,12 @@
     
     <br><br>
     <input type="button" onclick="sayhello()" value="Say Hello">
+    <input type="button" onclick="fun('You Clicked Fun Button')" value="Fun">
+
+    <!-- <p>Bring you mouse here</p>
+    <div onmouseover="over()" onmouseout="out()">
+        <h2>This div for mouse over and out event</h2>
+    </div> -->
 
     <noscript>
         Need JS in browser to proceed
